@@ -1,0 +1,17 @@
+/* login */
+.login {
+    background: green
+}
+
+
+/* header */
+.header {
+    height: 100px;
+}
+
+/* footer */
+
+.footer {
+    height: 400px;
+    text-align: center;
+}

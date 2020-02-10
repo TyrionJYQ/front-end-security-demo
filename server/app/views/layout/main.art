@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>front-end security</title>
+    {{include './linker.art'}}
+</head>
+
+<body>
+    {{include './header.art'}}
+
+    {{block 'container'}}
+
+    {{/block}}
+
+    {{include './footer.art'}}
+   
+</body>
+
+</html>

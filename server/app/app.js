@@ -4,9 +4,11 @@ const bodyParser = require('koa-bodyparser')
 const router = require('./router')
 const render = require('koa-art-template');
 const path = require('path')
-
+const logger = require('./middlewares/logger')
+const statiDir = require('./middlewares/staticDir')
 // handler request body
 app.use(bodyParser());
+
 
 
 // koa-art-template
@@ -17,12 +19,8 @@ render(app, {
 });
 
 // logger
-app.use(async (ctx, next) => {
-    console.log('request url: ' + ctx.request.url + "; request method:" + ctx.request.method +  "; time: " + new Date());
-    await next()
-   
+app.use(logger)
 
-})
 
 // request
 app.use(async (ctx, next) => {
@@ -40,8 +38,12 @@ app.use(async (ctx, next) => {
 })
 
 
-
 app.use(router.routes());
 app.use(router.allowedMethods());
+
+
+// app.listen(9999, () => {
+//     console.log('正常网站启动成功:'+9999);
+// });
 
 module.exports = app;

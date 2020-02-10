@@ -1,0 +1,9 @@
+{{extend './layout/main.art'}}
+
+{{block 'container'}}
+
+<div class="login">
+注册
+</div>
+ {{/block}}
+
