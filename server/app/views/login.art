@@ -2,8 +2,12 @@
 
 {{block 'container'}}
 
-<div class="login">
-注册
+<div class="login content">
+    <form action="/login" method="post">
+        <input type="text" placeholder="请输入用户名" class="form-item" name="username" value="tom"/>
+        <input type="text" placeholder="请输入密码"  class="form-item" name="password" value="123"/>
+        <input type="submit" value="登录" />
+    </form>
 </div>
  {{/block}}
 

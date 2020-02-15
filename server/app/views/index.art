@@ -3,9 +3,26 @@
 {{extend './layout/main.art'}}
 <!-- 填坑 -->
 {{block 'container'}}
-<div>
-    <h2>欢迎来自 {{country}}！！！</h2>
-    <h2>用户名{{username}}！！！</h2>
-    <h2>评论 {{comment}}！！！</h2>
+<div class="content">
+   {{if username}}
+        welcome {{username}} 
+        {{if country}}
+            from {{@country}}！
+        {{/if}}
+        <h3> 评论:  {{@comment}} </h3>
+        <form action="/updateText" method="post" name="form">
+            修改评论: <input type="text" name="comment" id='text'/>
+            <input type="button" value="点赞"  onclick="send()"/>
+        </form>
+        {{else}}
+        <a href="/login">去登陆</a>
+   {{/if}}
 </div>
+  <script>
+    function send(){
+    document.querySelector('form').submit();
+    }
+  </script>
  {{/block}}
+
+

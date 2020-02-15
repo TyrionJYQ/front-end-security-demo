@@ -1,17 +1,64 @@
 /* login */
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .login {
     background: green
 }
 
 
-/* header */
-.header {
-    height: 100px;
+/* header  footer*/
+.header,.footer {
+    height: 50px;
+    line-height: 50px;
+    background:#a9e2a9;
+    text-align: center;
+    font-size: 20px;
 }
 
-/* footer */
 
-.footer {
-    height: 400px;
+/* content */
+
+.content {
+    flex: 1;
+    background-color: #eee;
+}
+
+/* login */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.login form {
+    height: auto;
+    width: 70%;
+    /* flex: 1; */
+    /* background-color: #eee; */
     text-align: center;
+}
+.form-item {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 30px;
+    padding-left: 15px;
+}
+.submit {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: aquamarine;
+    border-radius: 4px;
+    cursor: pointer;
 }
